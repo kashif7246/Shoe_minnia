@@ -31,11 +31,12 @@ app.use(express.static("PRODUCT_FILES"));
 // app.use("PRODUCT_FILES",express.static("PRODUCT_FILES"))
 
 // app.use(express.static(path.join(__dirname, "../shoe_minnia_frontend/build")));
-app.use(express.static(path.join(__dirname, "../shoe_minnia_frontend/build")));
+if (process.env.NODE_ENV === "production")
+  app.use(express.static(path.join(__dirname, "./shoe_minnia_frontend/build")));
 
 app.get("*", (req, res) => {
   res.sendFile(
-    path.resolve(__dirname, "../shoe_minnia_frontend/build/index.html")
+    path.resolve(__dirname, "./shoe_minnia_frontend/build/index.html")
   );
 });
 
