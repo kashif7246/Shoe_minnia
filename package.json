@@ -11,7 +11,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node backend/server.js",
     "dev": "nodemon backend/server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install --prefix shoe_minnia_frontend && npm run build --prefix shoe_minnia_frontend"
+                   "preinstall": "npx npm-force-resolutions",
+                "heroku-postbuild": "npm install"
+    // "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install --prefix shoe_minnia_frontend && npm run build --prefix shoe_minnia_frontend"
   },
   "author": "",
   "license": "ISC",
