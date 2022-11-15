@@ -11,6 +11,8 @@ const options = {
   size: window.innerWidth < 600 ? 13 : 25,
 };
 const ProductCard = ({ product }) => {
+  console.log(product.images[0].path, "product");
+
   return (
     <>
       <Link
